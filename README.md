@@ -1,2 +1,0 @@
-# cinema-layout
-cinema-layout
