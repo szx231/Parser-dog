@@ -5,7 +5,7 @@ const queue = require('async/queue');
 const fs = require('fs/promises');
 
 let data = [];
-async function doskaCat() {
+async function doskaDog() {
   async function parse(url, isDetailed) {
   try {
     const dom = await JSDOM.fromURL(url);
@@ -29,10 +29,10 @@ async function doskaCat() {
         q.push({url: nextUrl,isDetailed: false});
       }
     } else {
-      const imgCat = d.querySelector('.ads_photo_label > div > div > a').getAttribute('href');
-      data.push({img: imgCat});
-      const updateCat = d.querySelector("td > table > tbody > tr:nth-child(2) > td:nth-child(3)").textContent.substr(17, 5);
-      data.push({update: updateCat});
+      const imgDog = d.querySelector('.ads_photo_label > div > div > a').getAttribute('href');
+      data.push({img: imgDog});
+      const updateDog = d.querySelector("td > table > tbody > tr:nth-child(2) > td:nth-child(3)").textContent.substr(17, 5);
+      data.push({update: updateDog});
     }
   } catch (e) {
     console.error(e);
@@ -110,4 +110,4 @@ if (data.length > 0) {
 }
 
 
-module.exports = doskaCat;
+module.exports = doskaDog;

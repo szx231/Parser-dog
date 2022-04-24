@@ -5,7 +5,7 @@ const queue = require('async/queue');
 const fs = require('fs/promises');
 
 let data = [];
-async function zooCat() {
+async function zooDog() {
 async function parse(url, isDetailed) {
   try {
     const dom = await JSDOM.fromURL(url);
@@ -19,11 +19,11 @@ async function parse(url, isDetailed) {
         const link = 'https://zooby.by/' + row.querySelector('.title').getAttribute('href');
         data.push({name: name}, {link: link}, {price: price});
       });
-      const catsCard = d.querySelectorAll('.item_outer_in');
-      catsCard.forEach(i => {
-        const linkCat = i.querySelector('.title');
-        if (linkCat) {
-          const detailedUrl = linkCat.href;
+      const DogsCard = d.querySelectorAll('.item_outer_in');
+      DogsCard.forEach(i => {
+        const linkDog = i.querySelector('.title');
+        if (linkDog) {
+          const detailedUrl = linkDog.href;
           q.push({url: detailedUrl,isDetailed: true});
         }
       });
@@ -125,4 +125,4 @@ if (data.length > 0) {
 // return new Promise(res=>setTimeout(()=>{res(2000)}, 2000))
 }
 
-module.exports = zooCat;
+module.exports = zooDog;

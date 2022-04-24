@@ -4,7 +4,7 @@ JSDOM
 const queue = require('async/queue');
 const fs = require('fs/promises');
 let data = [];
-async function onlinerCat() {
+async function onlinerDog() {
 async function parse(url, isDetailed) {
   try {
     const dom = await JSDOM.fromURL(url);
@@ -105,4 +105,4 @@ q.push({
   // return new Promise(res=>setTimeout(()=>{res(2000)}, 1400))
 }
 
-module.exports = onlinerCat;
+module.exports = onlinerDog;

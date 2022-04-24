@@ -10,11 +10,11 @@ const bot = new TelegramBot(token, {polling: true});
 
 
 //import modules(parser dosk file)
-const doskaCatModule = require('./parserjs/doskaCat')
-const irrCatModule = require('./parserjs/irrCat')
-const kufarCatModule = require('./parserjs/kufarCat')
-const onlinerCatModule = require('./parserjs/onlinerCat')
-const zooCatModule = require('./parserjs/zooCat');
+const doskaDogModule = require('./parserjs/doskaDog')
+const irrDogModule = require('./parserjs/irrDog')
+const kufarDogModule = require('./parserjs/kufarDog')
+const onlinerDogModule = require('./parserjs/onlinerDog')
+const zooDogModule = require('./parserjs/zooDog');
 const { ToadScheduler, SimpleIntervalJob, Task } = require('toad-scheduler');
 
 const scheduler = new ToadScheduler()
@@ -27,15 +27,15 @@ console.log('15')
 // launch functions
 const allFn = async ()=>{
   try {
-    await onlinerCatModule()
+    await onlinerDogModule()
     console.log('Выполнилась 1-я ф-ция')
-    await irrCatModule()
+    await irrDogModule()
     console.log('Выполнилась 2-я ф-ция')
-    await doskaCatModule()
+    await doskaDogModule()
     console.log('Выполнилась 3-я ф-ция')
-    await zooCatModule()
+    await zooDogModule()
     console.log('Выполнилась 4-я ф-ция')
-    await kufarCatModule() 
+    await kufarDogModule() 
     console.log('Выполнилась 5-я ф-ция')
   }catch (e) {
     console.error(e)

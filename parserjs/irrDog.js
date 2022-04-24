@@ -4,7 +4,7 @@ const {
 const queue = require('async/queue');
 const fs = require('fs/promises');
 let data = [];
-async function irrCat() {
+async function irrDog() {
 async function parse(url, isDetailed) {
   try {
     const dom = await JSDOM.fromURL(url);
@@ -30,11 +30,11 @@ async function parse(url, isDetailed) {
       nameAll.forEach((i) => {
         data.push({name: i.textContent});
       });
-      const catsCard = d.querySelectorAll('.listingItem');
-      catsCard.forEach(catsCard => {
-        const linkCat = catsCard;
-        if (linkCat) {
-          const detailedUrl = linkCat.href;
+      const DogsCard = d.querySelectorAll('.listingItem');
+      DogsCard.forEach(DogsCard => {
+        const linkDog = DogsCard;
+        if (linkDog) {
+          const detailedUrl = linkDog.href;
           q.push({url: detailedUrl,isDetailed: true});
         }
       });
@@ -44,11 +44,11 @@ async function parse(url, isDetailed) {
         q.push({url: nextUrl,isDetailed: false});
       }
     } else {
-      let imgCat;
+      let imgDog;
       if(d.querySelector('.carousel__image')) {
-        imgCat = d.querySelector('.carousel__image').getAttribute('data-src');
-      } else {imgCat = 'Картинки нет'}
-      data.push({img: imgCat});
+        imgDog = d.querySelector('.carousel__image').getAttribute('data-src');
+      } else {imgDog = 'Картинки нет'}
+      data.push({img: imgDog});
     }
   } catch (e) {
     console.error(e);
@@ -124,4 +124,4 @@ q.push({
   // return new Promise(res=>setTimeout(()=>{res(2000)}, 1600))
 }
 
-module.exports = irrCat;
+module.exports = irrDog;

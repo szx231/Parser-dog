@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 let data = [];
 const puppeteer = require('puppeteer');
 
-async function kufarCat() {
+async function kufarDog() {
 try {
 const browser = await puppeteer.launch({
   'args' : [
@@ -109,5 +109,5 @@ console.log(link.length, 'link')
 }
 // return new Promise(res=>setTimeout(()=>{res(2000)}, 1600))
 }
-module.exports = kufarCat;
+module.exports = kufarDog;
 
